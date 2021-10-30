@@ -1,9 +1,15 @@
+import { BrandResponseModel } from './../models/brandResponseModel';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class BrandService {
+  apiUrl="https://localhost:44353/api/brands"
 
-  constructor() { }
+  constructor(private httpClient : HttpClient) { }
+
+  getBrands():Observable<BrandResponseModel>{
+    return this.httpClient.get<BrandResponseModel>(this.apiUrl+"/getall")
+  }
 }
