@@ -1,0 +1,66 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Car Name</th>
+      <th>Brand</th>
+      <th>Color</th>
+      <th>Daily Price</th>
+      <th>Model Year</th>
+      <th>Description</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngIf="car">
+      <td>{{ car.id }}</td>
+      <td>{{ car.carName }}</td>
+      <td>{{ car.brandName }}</td>
+      <td>{{ car.colorName }}</td>
+      <td>{{ car.dailyPrice }}</td>
+      <td>{{ car.modelYear }}</td>
+      <td>{{ car.description }}</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+<div
+  id="carouselExampleFade"
+  class="carousel slide carousel-fade"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-inner">
+    <div
+      *ngFor="let image of carImages; let i = index"
+      [class]="getSliderClassName(i)"
+    >
+      <img
+        src="https://localhost:44353/{{image.imagePath}}"
+        class="d-block w-100"
+        width="400px"
+        height="500px"
+        alt="..."
+      />
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleFade"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleFade"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
