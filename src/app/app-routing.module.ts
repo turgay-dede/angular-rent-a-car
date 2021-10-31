@@ -7,8 +7,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { CustomerComponent } from './components/customer/customer.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'car', pathMatch: 'full' },
+  { path: '', redirectTo: 'cars', pathMatch: 'full' },
   { path: 'cars', component: CarComponent },
+  { path: 'cars/brand/:brandId', component: CarComponent },
   { path: 'brands', component: BrandComponent },
   { path: 'colors', component: ColorComponent },
   { path: 'customers', component: CustomerComponent },
