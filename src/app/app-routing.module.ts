@@ -8,11 +8,11 @@ import { CustomerComponent } from './components/customer/customer.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'car', pathMatch: 'full' },
-  { path: 'car', component: CarComponent },
-  { path: 'brand', component: BrandComponent },
-  { path: 'color', component: ColorComponent },
-  { path: 'customer', component: CustomerComponent },
-  { path: 'rental', component: RentalComponent },
+  { path: 'cars', component: CarComponent },
+  { path: 'brands', component: BrandComponent },
+  { path: 'colors', component: ColorComponent },
+  { path: 'customers', component: CustomerComponent },
+  { path: 'rentals', component: RentalComponent },
 ];
 
 @NgModule({
