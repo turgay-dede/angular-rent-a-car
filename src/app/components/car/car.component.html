@@ -1,26 +1,15 @@
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Brand</th>
-            <th>Color</th>            
-            <th>Daily Price</th>
-            <th>Model Year</th>
-            <th>Description</th>
-        </tr>
-        
-    </thead>
-    <tr *ngFor="let car of cars" routerLink="/cars/detail/{{car.id}}">
-        <td>{{car.id}}</td>
-        <td>{{car.carName}}</td>
-        <td>{{car.brandName}}</td>
-        <td>{{car.colorName}}</td>        
-        <td>{{car.dailyPrice}}</td>
-        <td>{{car.modelYear}}</td>
-        <td>{{car.description}}</td>
-    </tr>
-    <tbody>
-
-    </tbody>
-</table>
+<div class="row">
+    <div class="card" style="width: 15rem" *ngFor="let car of cars">
+      
+        <img *ngIf="car.carImage" src="https://localhost:44353/{{car.carImage}}"
+        class="card-img-top" width="200" height="150"/>
+        <img *ngIf="!car.carImage" src="https://lh3.googleusercontent.com/proxy/PmwQvJuDGgqE-wKYbUNva4Dkvtxl-fJxF0Db-QZQTWgKB1lOGshHXX-NT0HnODHqo4-b46BL3DC9cvUNo_O5CL3fghXld7g1dqrjy3vXkzN7f-Za0sXpU1YhUtc"
+        class="card-img-top" width="200" height="150"/>
+        <div class="card-body">
+          <h5 class="card-title">{{car.carName}}</h5>
+          <p class="card-text">{{ car.description }}</p>
+          <a routerLink="/cars/detail/{{car.id}}" class="btn btn-primary">Detaylar</a>
+        </div>
+      </div>
+      
+</div>

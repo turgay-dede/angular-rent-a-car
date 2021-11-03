@@ -10,8 +10,8 @@ import { CustomerComponent } from './components/customer/customer.component';
 const routes: Routes = [
   { path: '', redirectTo: 'cars', pathMatch: 'full' },
   { path: 'cars', component: CarComponent },
-  { path: 'cars/brand/:brandId', component: CarComponent },
-  { path: 'cars/color/:colorId', component: CarComponent },
+  { path: 'cars/brand/:brandName', component: CarComponent },
+  { path: 'cars/color/:colorName', component: CarComponent },
   { path: 'cars/detail/:id', component: CarDetailComponent },
   { path: 'brands', component: BrandComponent },
   { path: 'colors', component: ColorComponent },

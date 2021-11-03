@@ -1,7 +1,11 @@
-<h3>Colors</h3>
+<h5 class="text-center">Colors</h5>
 <ul class="list-group">
-  <li *ngFor="let color of colors" class="list-group-item"  routerLink="/cars/color/{{ color.id }}">
-   
+  <li
+    *ngFor="let color of colors"
+    class="list-group-item"
+    routerLinkActive="active"
+    routerLink="/cars/color/{{ color.colorName }}"
+  >
     {{ color.colorName }}
   </li>
 </ul>

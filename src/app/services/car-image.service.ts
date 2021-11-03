@@ -6,11 +6,14 @@ import { CarImage } from '../models/carImage';
 
 @Injectable()
 export class CarImageService {
-  apiUrl="https://localhost:44353/api/carimages"
+  apiUrl = 'https://localhost:44353/api/carimages';
+  path: string;
 
-  constructor(private httpClient : HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-  getCarImagesByCar(carId:number):Observable<ListResponseModel<CarImage>>{
-    return this.httpClient.get<ListResponseModel<CarImage>>(this.apiUrl+"/getbycarid?carId="+carId)
+  getCarImagesByCar(carId: number): Observable<ListResponseModel<CarImage>> {
+    return this.httpClient.get<ListResponseModel<CarImage>>(
+      this.apiUrl + '/getbycarid?carId=' + carId
+    );
   }
 }
