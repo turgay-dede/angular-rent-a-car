@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColorComponent implements OnInit {
   colors: Color[] = [];
+  colorfilterText=""
 
   constructor(private colorService: ColorService) {}
 

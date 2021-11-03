@@ -1,12 +1,18 @@
+<div class="mb-3">  
+  <input type="text" class="form-control" id="filterText" [(ngModel)]="filterText" placeholder="Find a car">
+</div>
+<div *ngIf="filterText">
+<small><strong>{{filterText}}</strong> aradınız</small>
+</div>
 <div class="row">
-    <div class="card" style="width: 15rem" *ngFor="let car of cars">
+    <div class="card" style="width: 15rem" *ngFor="let car of cars | carFilter:filterText">
       
         <img *ngIf="car.carImage" src="https://localhost:44353/{{car.carImage}}"
         class="card-img-top" width="200" height="150"/>
         <img *ngIf="!car.carImage" src="https://lh3.googleusercontent.com/proxy/PmwQvJuDGgqE-wKYbUNva4Dkvtxl-fJxF0Db-QZQTWgKB1lOGshHXX-NT0HnODHqo4-b46BL3DC9cvUNo_O5CL3fghXld7g1dqrjy3vXkzN7f-Za0sXpU1YhUtc"
         class="card-img-top" width="200" height="150"/>
         <div class="card-body">
-          <h5 class="card-title">{{car.carName}}</h5>
+          <h5 class="card-title">{{car.carName }}</h5>
           <p class="card-text">{{ car.description }}</p>
           <a routerLink="/cars/detail/{{car.id}}" class="btn btn-primary">Detaylar</a>
         </div>

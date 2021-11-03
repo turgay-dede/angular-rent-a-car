@@ -1,7 +1,16 @@
 <h5 class="text-center">Brands</h5>
+<div class="mb-3">
+  <input
+    type="text"
+    class="form-control"
+    id="brandfilterText"
+    [(ngModel)]="brandfilterText"
+    placeholder="Search brand"
+  />
+</div>
 <ul class="list-group">
   <li
-    *ngFor="let brand of brands"
+    *ngFor="let brand of brands | brandFilter:brandfilterText"
     routerLinkActive="active"
     routerLink="/cars/brand/{{ brand.brandName }}"
     class="list-group-item"

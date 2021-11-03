@@ -15,6 +15,7 @@ export class CarComponent implements OnInit {
   cars: Car[]
   images : CarImage[]
   path:string
+  filterText=""
   
 
   constructor(

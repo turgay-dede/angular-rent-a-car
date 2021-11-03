@@ -1,7 +1,16 @@
 <h5 class="text-center">Colors</h5>
+<div class="mb-3">
+  <input
+    type="text"
+    class="form-control"
+    id="colorfilterText"
+    [(ngModel)]="colorfilterText"
+    placeholder="Search color"
+  />
+</div>
 <ul class="list-group">
   <li
-    *ngFor="let color of colors"
+    *ngFor="let color of colors | colorFilter: colorfilterText"
     class="list-group-item"
     routerLinkActive="active"
     routerLink="/cars/color/{{ color.colorName }}"
